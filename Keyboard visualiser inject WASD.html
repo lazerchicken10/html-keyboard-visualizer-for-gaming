@@ -1,0 +1,260 @@
+
+</div>
+</body>
+</html>
+<div class="arrow-keys">
+
+<div style="display: flex; flex-direction: column; align-items: center;">
+
+<div style="display: flex;">
+
+<div class="arrow-key q-key" id="q"><span>Q</span></div>
+
+<div class="arrow-key w-key" id="up"><span>W</span></div>
+
+<div class="arrow-key e-key" id="e"><span>E</span></div>
+
+</div>
+
+<div style="display: flex;">
+
+<div class="arrow-key" id="left"><span>A</span></div>
+
+<div class="arrow-key" id="down"><span>S</span></div>
+
+<div class="arrow-key" id="right"><span>D</span></div>
+
+</div>
+
+<div style="display: flex; align-items: center;">
+
+<div class="shift-key" id="shift"><span>Shift</span></div>
+
+<div class="space-bar" id="space"><span>Space</span></div>
+
+</div>
+
+</div>
+
+</div>
+
+<style>
+
+.arrow-keys {
+
+position: absolute;
+
+top: 20px;
+
+right: 20px;
+
+display: flex;
+
+flex-direction: column;
+
+align-items: center;
+
+}
+
+.arrow-key {
+
+width: 50px;
+
+height: 50px;
+
+background-color: black; /* Solid black background */
+
+opacity: 0.5; /* 50% opacity for the background only */
+
+display: flex;
+
+justify-content: center;
+
+align-items: center;
+
+margin: 5px;
+
+font-size: 24px;
+
+color: white; /* White text */
+
+border: 2px solid green; /* Green border */
+
+transition: background-color 0.2s;
+
+user-select: none;
+
+border-radius: 8px; /* Smoothing corners */
+
+}
+
+.q-key {
+
+margin-right: 10px; /* Align Q key with A key */
+
+}
+
+.w-key {
+
+margin-left: 10px; /* Move W key to the right */
+
+}
+
+.e-key {
+
+margin-left: 10px; /* Align E key with D key */
+
+}
+
+.space-bar {
+
+width: 150px; /* Width of the space bar */
+
+height: 50px; /* Height of the space bar */
+
+background-color: black; /* Solid black background */
+
+opacity: 0.5; /* 50% opacity for the background only */
+
+display: flex;
+
+justify-content: center;
+
+align-items: center;
+
+margin: 5px;
+
+font-size: 24px;
+
+color: white; /* White text */
+
+border: 2px solid green; /* Green border */
+
+transition: background-color 0.2s;
+
+user-select: none;
+
+border-radius: 8px; /* Smoothing corners */
+
+}
+
+.shift-key {
+
+width: 100px; /* Width of the Shift key */
+
+height: 40px; /* Height of the Shift key */
+
+background-color: black; /* Solid black background */
+
+opacity: 0.5; /* 50% opacity for the background only */
+
+border: 2px solid green; /* Green border */
+
+display: flex;
+
+justify-content: center;
+
+align-items: center;
+
+margin: 5px;
+
+font-size: 24px;
+
+color: white; /* White text */
+
+transition: background-color 0.2s;
+
+user-select: none;
+
+border-radius: 8px; /* Smoothing corners */
+
+}
+
+.active {
+
+background-color: #15ff00; /* Highlight active keys in light green */
+
+}
+
+</style>
+
+<script>
+
+const arrowKeys = {
+
+q: document.getElementById('q'), // Added Q key
+
+w: document.getElementById('up'),
+
+e: document.getElementById('e'), // Added E key
+
+a: document.getElementById('left'),
+
+s: document.getElementById('down'),
+
+d: document.getElementById('right'),
+
+' ': document.getElementById('space'), // Space bar
+
+Shift: document.getElementById('shift'), // Shift key
+
+};
+
+document.addEventListener('keydown', (event) => {
+
+if (arrowKeys[event.key]) {
+
+arrowKeys[event.key].classList.add('active');
+
+}
+
+});
+
+document.addEventListener('keyup', (event) => {
+
+if (arrowKeys[event.key]) {
+
+arrowKeys[event.key].classList.remove('active');
+
+}
+
+});
+
+</script>
+<div class="made-by-box" onclick="window.open('https://github.com/lazerchicken10', '_blank');">
+    Made by lazer
+</div>
+
+<!-- Styles -->
+<style>
+    @keyframes rainbow-border {
+        0% { border-color: red; }
+        14% { border-color: orange; }
+        28% { border-color: yellow; }
+        42% { border-color: green; }
+        57% { border-color: blue; }
+        71% { border-color: indigo; }
+        85% { border-color: violet; }
+        100% { border-color: red; }
+    }
+
+    .made-by-box {
+        position: fixed; /* Fixed position */
+        bottom: 20px; /* Distance from the bottom */
+        right: 20px; /* Distance from the right */
+        background-color: #000; /* Black background */
+        color: #fff; /* White text */
+        padding: 5px 10px; /* Reduced padding */
+        border-radius: 5px; /* Rounded corners */
+        cursor: pointer; /* Pointer cursor on hover */
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Shadow effect */
+        border: 3px solid; /* Border */
+        animation: rainbow-border 5s infinite; /* Rainbow border animation */
+        transition: background-color 0.3s; /* Smooth transition */
+        font-size: 14px; /* Smaller font size */
+    }
+
+    .made-by-box:hover {
+        background-color: #444; /* Darker background on hover */
+    }
+</style>
