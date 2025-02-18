@@ -1,0 +1,106 @@
+<div class="arrow-keys">
+    <div style="display: flex; flex-direction: column; align-items: center;">
+        <div style="display: flex;">
+            <div class="arrow-key" id="up"><span>↑</span></div>
+        </div>
+        <div style="display: flex;">
+            <div class="arrow-key" id="left"><span>←</span></div>
+            <div class="arrow-key" id="down"><span>↓</span></div>
+            <div class="arrow-key" id="right"><span>→</span></div>
+        </div>
+    </div>
+</div>
+
+<!-- Styles -->
+<style>
+    .arrow-keys {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .arrow-key {
+        width: 50px;
+        height: 50px;
+        background-color: black; /* Solid black background */
+        opacity: 0.5; /* 50% opacity for the background only */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 5px;
+        font-size: 24px;
+        color: white; /* White text */
+        border: 2px solid green; /* Green border */
+        transition: background-color 0.2s;
+        user-select: none;
+        border-radius: 8px; /* Smoothing corners */
+    }
+
+    .active {
+        background-color: #15ff00; /* Highlight active keys in light green */
+    }
+</style>
+
+<!-- Script -->
+<script>
+    const arrowKeys = {
+        ArrowUp: document.getElementById('up'),
+        ArrowDown: document.getElementById('down'),
+        ArrowLeft: document.getElementById('left'),
+        ArrowRight: document.getElementById('right'),
+    };
+
+    document.addEventListener('keydown', (event) => {
+        if (arrowKeys[event.key]) {
+            arrowKeys[event.key].classList.add('active');
+        }
+    });
+
+    document.addEventListener('keyup', (event) => {
+        if (arrowKeys[event.key]) {
+            arrowKeys[event.key].classList.remove('active');
+        }
+    });
+</script>
+
+<!-- Made by Box -->
+<div class="made-by-box" onclick="window.open('https://github.com/lazerchicken10', '_blank');">
+    Made by lazer
+</div>
+
+<!-- Styles for Made by Box -->
+<style>
+    @keyframes rainbow-border {
+        0% { border-color: red; }
+        14% { border-color: orange; }
+        28% { border-color: yellow; }
+        42% { border-color: green; }
+        57% { border-color: blue; }
+        71% { border-color: indigo; }
+        85% { border-color: violet; }
+        100% { border-color: red; }
+    }
+
+    .made-by-box {
+        position: fixed; /* Fixed position */
+        bottom: 20px; /* Distance from the bottom */
+        right: 20px; /* Distance from the right */
+        background-color: #000; /* Black background */
+        color: #fff; /* White text */
+        padding: 5px 10px; /* Reduced padding */
+        border-radius: 5px; /* Rounded corners */
+        cursor: pointer; /* Pointer cursor on hover */
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Shadow effect */
+        border: 3px solid; /* Border */
+        animation: rainbow-border 5s infinite; /* Rainbow border animation */
+        transition: background-color 0.3s; /* Smooth transition */
+        font-size: 14px; /* Smaller font size */
+    }
+
+    .made-by-box:hover {
+        background-color: #444; /* Darker background on hover */
+    }
+</style>
